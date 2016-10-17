@@ -1,0 +1,168 @@
+/* ==========================================================
+   Стили шрифтов
+========================================================== */
+@font-face {
+  font-family: 'iconfont';
+  src:  url('../fonts/iconfont.eot?ka2u9p');
+  src:  url('../fonts/iconfont.eot?ka2u9p#iefix') format('embedded-opentype'),
+    url('../fonts/iconfont.ttf?ka2u9p') format('truetype'),
+    url('../fonts/iconfont.woff?ka2u9p') format('woff'),
+    url('../fonts/iconfont.svg?ka2u9p#iconfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'iconfont' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+[class^="icon-"], [class*=" icon-"] {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin-right: 0;
+    line-height: 1;
+}
+[class^="icon-"]:before, [class*=" icon-"]:before{
+    font-family: 'iconfont' !important;
+}
+.icon-right-arrow:before {
+  content: "\e900";
+}
+.icon-phone-call:before {
+  content: "\e901";
+}
+.icon-balloons:before {
+  content: "\e902";
+}
+.icon-house:before {
+  content: "\e903";
+}
+/* ==========================================================
+   Общие стили
+========================================================== */
+a,a:hover,a:focus{
+    transition: all 0.2s ease;
+}
+.uk-inline-block{
+    display: inline-block;
+}
+.uk-wrapper{
+    padding: 0 70px;
+}
+.uk-text-semibold{
+    font-weight: 300;
+}
+.uk-text-semibold{
+    font-weight: 600;
+}
+/* ==========================================================
+   Стили шапки
+========================================================== */
+.tm-headerbar{
+    margin: 0;
+}
+.tm-headerbar-home{
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: 5;
+}
+.tm-navbar{
+    margin: 0;
+}
+.uk-md-phone-row{
+    padding-right: 40px;
+}
+.uk-md-phone-row .icon-phone-call{
+    font-size: 30px;
+    top: 50%;
+    right: 0;
+    margin-top: -15px;
+}
+/* ==========================================================
+   Стили основных блоков на главной
+========================================================== */
+.uk-col{
+    float: left;
+    transition: all 0.2s ease;
+    position: relative;
+    transform: translate3d(0px, 0px, 0px) scale(1);
+}
+.uk-col:hover{
+    transform: translate3d(5vw, 0px, 0px) scale(1.5);
+    position: relative;
+    transition: all 0.2s ease;
+}
+.uk-columns-1 > .uk-col{
+    width: 100%;
+}
+.uk-columns-2 > .uk-col{
+    width: 50%;
+}
+.uk-columns-3 > .uk-col{
+    width: 33.33%;
+}
+.uk-columns-4 > .uk-col{
+    width: 25%;
+}
+.uk-columns-5 > .uk-col{
+    width: 20%;
+}
+.uk-menu-advance-block-bg{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    height: 100%;
+}
+.uk-menu-advance-block-bg:after{
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+}
+.uk-menu-advance-block-list{
+    list-style: none;
+    z-index: 5;
+    padding: 0;
+    margin: 0;
+}
+.uk-menu-advance-block-list li a{
+    color: #fff;
+}
+/* ==========================================================
+   Стили шапки
+========================================================== */
+.tm-footer{
+    margin: 0;
+}
+.tm-footer-home{
+    bottom: 25px;
+    left: 0;
+    right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
