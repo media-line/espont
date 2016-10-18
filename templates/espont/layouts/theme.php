@@ -21,7 +21,7 @@ include($this['path']->path('layouts:theme.config.php'));
 
 
 		<?php if ($this['widgets']->count('toolbar-l + toolbar-r')) : ?>
-		<div class="tm-toolbar uk-clearfix uk-hidden-small">
+		<div class="tm-toolbar uk-clearfix uk-hidden-small uk-hidden-medium">
 
 			<?php if ($this['widgets']->count('toolbar-l')) : ?>
 			<div class="uk-float-left"><?php echo $this['widgets']->render('toolbar-l'); ?></div>
@@ -35,40 +35,40 @@ include($this['path']->path('layouts:theme.config.php'));
 		<?php endif; ?>
 
 		<?php if ($this['widgets']->count('logo + headerbar')) : ?>
-		<div class="tm-headerbar tm-headerbar-home uk-hidden-small uk-wrapper uk-position-absolute">
+		<div class="tm-headerbar tm-headerbar-home uk-wrapper uk-position-absolute">
             <div class="uk-grid uk-grid-small">
 
                 <?php if ($this['widgets']->count('logo')) : ?>
-                <div class="uk-width-1-5">
+                <div class="uk-width-1-5 uk-logo-wrapper">
                     <a class="tm-logo uk-inline-block" href="<?php echo $this['config']->get('site_url'); ?>"><?php echo $this['widgets']->render('logo'); ?></a>
                 </div>
                 <?php endif; ?>
                 
                 <?php if ($this['widgets']->count('menu + search')) : ?>
-                <nav class="tm-navbar uk-navbar uk-float-left uk-width-3-5 uk-margin-top">
+                <nav class="tm-navbar uk-navbar uk-float-left uk-width-4-5 uk-width-large-3-5 uk-width-medium-4-5 uk-width-small-4-5">
 
                     <?php if ($this['widgets']->count('menu')) : ?>
                     <?php echo $this['widgets']->render('menu'); ?>
                     <?php endif; ?>
 
                     <?php if ($this['widgets']->count('offcanvas')) : ?>
-                    <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+                    <a href="#offcanvas" class="uk-navbar-toggle uk-hidden-large" data-uk-offcanvas></a>
                     <?php endif; ?>
 
                     <?php if ($this['widgets']->count('search')) : ?>
                     <div class="uk-navbar-flip">
-                        <div class="uk-navbar-content uk-hidden-small"><?php echo $this['widgets']->render('search'); ?></div>
+                        <div class="uk-navbar-content uk-hidden-medium uk-hidden-small"><?php echo $this['widgets']->render('search'); ?></div>
                     </div>
                     <?php endif; ?>
 
                     <?php if ($this['widgets']->count('logo-small')) : ?>
-                    <div class="uk-navbar-content uk-navbar-center uk-visible-small"><a class="tm-logo-small" href="<?php echo $this['config']->get('site_url'); ?>"><?php echo $this['widgets']->render('logo-small'); ?></a></div>
+                    <div class="uk-navbar-content uk-navbar-center uk-hidden-large"><a class="tm-logo-small" href="<?php echo $this['config']->get('site_url'); ?>"><?php echo $this['widgets']->render('logo-small'); ?></a></div>
                     <?php endif; ?>
 
                 </nav>
                 <?php endif; ?>
                 
-                <div class="uk-width-1-5">
+                <div class="uk-width-1-5 uk-hidden-small uk-hidden-medium">
                     <?php echo $this['widgets']->render('headerbar'); ?>
                 </div>
             </div>
@@ -79,7 +79,7 @@ include($this['path']->path('layouts:theme.config.php'));
             if ($this['widgets']->count('home-blocks')) { 
             $homeBlocksCount = $this['widgets']->count('home-blocks');
         ?>
-            <div class="uk-columns-<?php echo $homeBlocksCount; ?> uk-clearfix">
+            <div class="uk-columns uk-columns-<?php echo $homeBlocksCount; ?> uk-clearfix uk-cover">
                 <?php echo $this['widgets']->render('home-blocks'); ?>
             </div>
         <?php } ?>
@@ -139,23 +139,25 @@ include($this['path']->path('layouts:theme.config.php'));
 		<?php endif; ?>
 
 		<?php if ($this['widgets']->count('footer + debug') || $this['config']->get('warp_branding', true) || $this['config']->get('totop_scroller', true)) : ?>
-		<footer id="tm-footer" class="tm-footer tm-footer-home uk-position-absolute uk-wrapper">
-            <div class="uk-grid">
-                
-                <div class="uk-width-4-5">
-                    <div class="uk-text-muted uk-text-left">
-                    <?php
-                        echo $this['widgets']->render('footer');
-                    ?>
+		<footer id="tm-footer" class="tm-footer tm-footer-home">
+            <div class="uk-wrapper uk-position-absolute">
+                <div class="uk-grid">
+                    
+                    <div class="uk-width-1-1 uk-width-large-7-10 uk-width-medium-6-10 uk-width-small-1-2">
+                        <div class="uk-site-copyrate uk-text-muted uk-text-left">
+                        <?php
+                            echo $this['widgets']->render('footer');
+                        ?>
+                        </div>
                     </div>
-                </div>
-                <div class="uk-width-1-5">
-                    <div class="uk-medialine-copyrate uk-text-muted uk-text-right">
-                        <?php if (JURI::current() == JURI::base()){ ?>
-                            Разработка сайта - <a class="uk-text-contrast" href="www.medialine.by" target="_blank">Медиа Лайн</a>
-                        <?php } else {?>
-                            Разработка сайта - <a href="www.medialine.by" target="_blank" rel="nofollow">Медиа Лайн</a>
-                        <?php }?>
+                    <div class="uk-width-1-1 uk-width-large-3-10 uk-width-medium-4-10 uk-width-small-1-2">
+                        <div class="uk-medialine-copyrate uk-text-muted uk-text-right">
+                            <?php if (JURI::current() == JURI::base()){ ?>
+                                Разработка сайта - <a class="uk-text-contrast uk-bordered-link" href="www.medialine.by" target="_blank">Медиа Лайн</a>
+                            <?php } else {?>
+                                Разработка сайта - <a class="uk-text-contrast uk-bordered-link" href="www.medialine.by" target="_blank" rel="nofollow">Медиа Лайн</a>
+                            <?php }?>
+                        </div>
                     </div>
                 </div>
             </div>

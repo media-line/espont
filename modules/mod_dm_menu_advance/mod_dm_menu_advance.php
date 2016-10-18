@@ -24,6 +24,10 @@ $class_sfx  = htmlspecialchars($params->get('class_sfx'), ENT_COMPAT, 'UTF-8');
 if ($params->get('background')){
     $background  = 'style="background-image: url(' . $params->get('background') . ');"';
 }
+$icon = $params->get('icon');
+$color = $params->get('color','transparent');
+$iconColor = $params->get('icon_color','#000');
+
 if (count($list))
 {
 	require JModuleHelper::getLayoutPath('mod_dm_menu_advance', $params->get('layout', 'default'));

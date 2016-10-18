@@ -26,16 +26,45 @@
 					description="Задний фон"
 				/>
                 <field
+					name="color"
+					type="color"
+					label="Цвет выделения"
+					description="Цвет выделения"
+				/>
+                <field
 					name="icon"
-					type="media"
+					type="list"
 					label="Векторная иконка"
-					description="Векторная иконка"
+					default="0"
+					description="Векторная иконка">
+                    <option value="0">По умолчанию</option>
+                    <option value="1">Для бизнеса</option>
+                    <option value="2">Для дома</option>
+                    <option value="3">Для мероприятий</option>
+                </field>
+                <field
+					name="icon_color"
+					type="color"
+					label="Цвет векторной иконки"
+					description="Цвет векторной иконки"
 				/>
                 <field
 					name="image"
 					type="media"
 					label="Изображение вместо иконки"
 					description="Изображение вместо векторные иконки"
+				/>
+                <field
+					name="subtitle"
+					type="media"
+					label="Подзаголовок"
+					description="Изображение подзаголовка"
+				/>
+                <field
+					name="title"
+					type="text"
+					label="Заголовок"
+					description="Заголовок"
 				/>
                 <field
 					name="image"

@@ -1,6 +1,7 @@
 {
 	"dynamic_style": "1",
 	"compression": "0",
+	"bootstrap": "0",
 	"totop_scroller": "0",
 	"warp_branding": "0",
 	"panel_default": {
@@ -73,6 +74,36 @@
 	},
 	"widgets": {
 		"91": {
+			"class": "",
+			"panel": "",
+			"title_size": "uk-panel-title",
+			"icon": "",
+			"badge": {
+				"type": "uk-panel-badge uk-badge",
+				"text": ""
+			},
+			"display": {
+				"large": "1",
+				"medium": "1",
+				"small": "1"
+			}
+		},
+		"92": {
+			"class": "",
+			"panel": "",
+			"title_size": "uk-panel-title",
+			"icon": "",
+			"badge": {
+				"type": "uk-panel-badge uk-badge",
+				"text": ""
+			},
+			"display": {
+				"large": "1",
+				"medium": "1",
+				"small": "1"
+			}
+		},
+		"93": {
 			"class": "",
 			"panel": "",
 			"title_size": "uk-panel-title",

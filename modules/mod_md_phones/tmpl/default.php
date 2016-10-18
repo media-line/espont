@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 	</div>
 	<?php endif;?>
 		<?php for ($i = 0; $i < $phoneCount; $i++):?>
-			<a class="uk-md-phone-row uk-text-semibold uk-text-contrast uk-position-relative uk-inline-block" href="tel:<?php echo $phoneList->country_code[$i].$phoneList->operator_code[$i].$phoneList->phone_number[$i];?>">
+			<a class="uk-md-phone-row uk-text-semibold uk-text-contrast uk-position-relative uk-inline-block uk-bordered-link" href="tel:<?php echo $phoneList->country_code[$i].$phoneList->operator_code[$i].$phoneList->phone_number[$i];?>">
 				<span class="uk-phone-icon">
 					<?php if ($phoneList->phone_icon[$i] != ''): ?>
 						<img src="<?php echo $phoneList->phone_icon[$i];?>" />

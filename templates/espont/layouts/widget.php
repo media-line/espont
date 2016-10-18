@@ -51,7 +51,7 @@ if ($widget->menu) {
 		$renderer = $params['menu'];
 	} else if (in_array($widget->position, array('menu'))) {
 		$renderer = 'navbar';
-		$widget->nav_settings["modifier"] = "uk-hidden-small";
+		$widget->nav_settings["modifier"] = "uk-visible-large";
 	} else if (in_array($widget->position, array('toolbar-l', 'toolbar-r', 'footer'))) {
 		$renderer = 'subnav';
 		$widget->nav_settings["modifier"] = "uk-subnav-line";
@@ -75,7 +75,7 @@ if (in_array($widget->position, array('breadcrumbs', 'logo', 'logo-small', 'sear
 		echo $content;
 	} else {
 		echo '
-		<ul class="uk-navbar-nav uk-hidden-small">
+		<ul class="uk-navbar-nav uk-hidden-medium">
 			<li class="uk-parent" data-uk-dropdown>
 				<a href="#">'.$title.'</a>
 				<div class="uk-dropdown uk-dropdown-navbar">'.$content.'</div>
