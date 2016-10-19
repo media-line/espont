@@ -5844,7 +5844,7 @@ a.uk-thumbnail:focus {
   /* 3 */
   box-sizing: border-box;
   /* 4 */
-  width: 220px;
+  width: 200px;
 }
 /*
  * Dropdown style
@@ -5852,10 +5852,10 @@ a.uk-thumbnail:focus {
  */
 .uk-dropdown {
   padding: 15px;
-  background: #f5f5f5;
-  color: #444444;
+  background: #2f4459;
+  color: #8da9c5;
   /* 1 */
-  font-size: 1rem;
+  font-size: 16px;
   vertical-align: top;
 }
 /*
@@ -5935,16 +5935,16 @@ a.uk-thumbnail:focus {
      * Width multiplier for dropdown columns
      */
   .uk-dropdown-width-2:not(.uk-dropdown-stack) {
-    width: 440px;
+    width: 400px;
   }
   .uk-dropdown-width-3:not(.uk-dropdown-stack) {
-    width: 660px;
+    width: 600px;
   }
   .uk-dropdown-width-4:not(.uk-dropdown-stack) {
-    width: 880px;
+    width: 800px;
   }
   .uk-dropdown-width-5:not(.uk-dropdown-stack) {
-    width: 1100px;
+    width: 1000px;
   }
 }
 /* Phone landscape and smaller */

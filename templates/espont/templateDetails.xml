@@ -43,6 +43,7 @@
         <position settings="">toolbar-r</position>
         <position settings="">headerbar</position>
         <position settings="">breadcrumbs</position>
+        <position>headerbar-mobile</position>
         <position>home-blocks</position>
         <position>top-a</position>
         <position>top-b</position>

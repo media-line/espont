@@ -9,6 +9,8 @@
 /*
  * Generate 3-column layout
  */
+
+
 $config          = $this['config'];
 $sidebars        = $config->get('sidebars', array());
 $columns         = array('main' => array('width' => 60, 'alignment' => 'right'));
@@ -123,6 +125,7 @@ $this['asset']->addFile('js', 'js:theme.js');
 
 // internet explorer
 if ($this['useragent']->browser() == 'msie') {
+	$head[] = sprintf('<!--[if IE 8]><div class="uk-ie8-overlay">'.JText::_("TPL_BROUSER_IS_OUTDATED").'</div><![endif]-->');
 	$head[] = sprintf('<!--[if IE 8]><link rel="stylesheet" href="%s"><![endif]-->', $this['path']->url('css:ie8.css'));
     $head[] = sprintf('<!--[if lte IE 8]><script src="%s"></script><![endif]-->', $this['path']->url('js:html5.js'));
 }

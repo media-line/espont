@@ -34,7 +34,7 @@ include($this['path']->path('layouts:theme.config.php'));
 		</div>
 		<?php endif; ?>
 
-		<?php if ($this['widgets']->count('logo + headerbar')) : ?>
+		<?php if ($this['widgets']->count('logo + headerbar + menu + search + headerbar-mobile')) : ?>
 		<div class="tm-headerbar tm-headerbar-home uk-wrapper uk-position-absolute">
             <div class="uk-grid uk-grid-small">
 
@@ -44,15 +44,21 @@ include($this['path']->path('layouts:theme.config.php'));
                 </div>
                 <?php endif; ?>
                 
-                <?php if ($this['widgets']->count('menu + search')) : ?>
+                <?php if ($this['widgets']->count('menu + search + headerbar-mobile')) : ?>
                 <nav class="tm-navbar uk-navbar uk-float-left uk-width-4-5 uk-width-large-3-5 uk-width-medium-4-5 uk-width-small-4-5">
-
+                    
+                    <?php if ($this['widgets']->count('headerbar-mobile')) : ?>
+                        <div class="uk-headerbar-mobile uk-hidden-large uk-float-left uk-text-center">
+                            <?php echo $this['widgets']->render('headerbar-mobile'); ?>
+                        </div>
+                    <?php endif; ?>
+                    
                     <?php if ($this['widgets']->count('menu')) : ?>
-                    <?php echo $this['widgets']->render('menu'); ?>
+                        <?php echo $this['widgets']->render('menu'); ?>
                     <?php endif; ?>
 
                     <?php if ($this['widgets']->count('offcanvas')) : ?>
-                    <a href="#offcanvas" class="uk-navbar-toggle uk-hidden-large" data-uk-offcanvas></a>
+                        <a href="#offcanvas" class="uk-navbar-toggle uk-hidden-large" data-uk-offcanvas></a>
                     <?php endif; ?>
 
                     <?php if ($this['widgets']->count('search')) : ?>
@@ -68,7 +74,7 @@ include($this['path']->path('layouts:theme.config.php'));
                 </nav>
                 <?php endif; ?>
                 
-                <div class="uk-width-1-5 uk-hidden-small uk-hidden-medium">
+                <div class="uk-width-1-5 uk-header-phones uk-hidden-medium uk-hidden-small">
                     <?php echo $this['widgets']->render('headerbar'); ?>
                 </div>
             </div>
@@ -143,19 +149,19 @@ include($this['path']->path('layouts:theme.config.php'));
             <div class="uk-wrapper uk-position-absolute">
                 <div class="uk-grid">
                     
-                    <div class="uk-width-1-1 uk-width-large-7-10 uk-width-medium-6-10 uk-width-small-1-2">
+                    <div class="uk-width-1-1 uk-width-large-7-10 uk-width-medium-6-10 uk-width-small-1-1">
                         <div class="uk-site-copyrate uk-text-muted uk-text-left">
                         <?php
                             echo $this['widgets']->render('footer');
                         ?>
                         </div>
                     </div>
-                    <div class="uk-width-1-1 uk-width-large-3-10 uk-width-medium-4-10 uk-width-small-1-2">
+                    <div class="uk-width-1-1 uk-width-large-3-10 uk-width-medium-4-10 uk-width-small-1-1">
                         <div class="uk-medialine-copyrate uk-text-muted uk-text-right">
                             <?php if (JURI::current() == JURI::base()){ ?>
-                                Разработка сайта - <a class="uk-text-contrast uk-bordered-link" href="www.medialine.by" target="_blank">Медиа Лайн</a>
+                                Разработка сайта - <a class="uk-text-contrast uk-bordered-link" href="http://www.medialine.by" target="_blank">Медиа Лайн</a>
                             <?php } else {?>
-                                Разработка сайта - <a class="uk-text-contrast uk-bordered-link" href="www.medialine.by" target="_blank" rel="nofollow">Медиа Лайн</a>
+                                Разработка сайта - <a class="uk-text-contrast uk-bordered-link" href="http://www.medialine.by" target="_blank" rel="nofollow">Медиа Лайн</a>
                             <?php }?>
                         </div>
                     </div>
@@ -176,9 +182,13 @@ include($this['path']->path('layouts:theme.config.php'));
 
 	<?php if ($this['widgets']->count('offcanvas')) : ?>
 	<div id="offcanvas" class="uk-offcanvas">
-		<div class="uk-offcanvas-bar"><?php echo $this['widgets']->render('offcanvas'); ?></div>
+        
+		<div class="uk-offcanvas-bar">
+            <a href="#offcanvas" class="uk-close uk-offcanvas-close" data-uk-offcanvas></a>
+            <?php echo $this['widgets']->render('offcanvas'); ?>
+        </div>
 	</div>
 	<?php endif; ?>
-
+    
 </body>
 </html>

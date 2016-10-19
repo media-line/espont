@@ -12,7 +12,7 @@ jQuery(function($) {
     blocksAnimate()
     jQuery(window).resize(function(){
         blockHeightFix();
-        blocksAnimate()
+        blocksAnimate();
     });
     
     
@@ -31,6 +31,8 @@ function blocksAnimate(){
             jQuery('.js-home-block').removeClass('uk-hovered');
             jQuery('.js-home-block').removeClass('uk-shift-left');
             jQuery('.js-home-block').removeClass('uk-shift-right');
+            jQuery('.js-home-block').removeClass('uk-shift-large-left');
+            jQuery('.js-home-block').removeClass('uk-shift-large-right');
             
             var blocksCount = jQuery('.js-home-block').length;
             var currentIndex = jQuery(this).index();
@@ -64,6 +66,14 @@ function blocksAnimate(){
             jQuery('.js-home-block').removeClass('uk-shift-right');
             jQuery('.js-home-block').removeClass('uk-shift-large-left');
             jQuery('.js-home-block').removeClass('uk-shift-large-right');
+        });
+    } else{
+        jQuery('.js-home-block').hover(function(){
+            jQuery('.js-home-block').removeClass('uk-hovered uk-hover-center');
+            jQuery(this).addClass('uk-hovered uk-hover-center');
+        });
+        jQuery('.js-home-block').mouseleave(function(){
+            jQuery('.js-home-block').removeClass('uk-hovered uk-hover-center');
         });
     }
 }

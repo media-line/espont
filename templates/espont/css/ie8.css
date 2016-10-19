@@ -1,5 +1,15 @@
-/* Copyright (C) YOOtheme GmbH, http://www.gnu.org/licenses/gpl.html GNU/GPL */
-
 /* ========================================================================
    Defines styles for Internet Explorer 8
- ========================================================================== */
+========================================================================== */
+.uk-ie8-overlay{
+    background: #ff5500;
+    color: #fff;
+    height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 30px;
+    font-size: 26px;
+}
+.tm-headerbar{
+    top: 100px;
+}

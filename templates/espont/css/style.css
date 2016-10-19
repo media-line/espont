@@ -2,13 +2,14 @@
    Стили шрифтов
 ========================================================== */
 @font-face {
-  font-family: 'AvenirNextBold';
-  src: url('/templates/espont/fonts/AvenirNextLTW01BoldRegular.eot?#iefix') format('embedded-opentype'),
-    url('/templates/espont/fonts/AvenirNextLTW01BoldRegular.woff') format('woff'),
-    url('/templates/espont/fonts/AvenirNextLTW01BoldRegular.ttf')  format('truetype'),
-    url('/templates/espont/fonts/AvenirNextLTW01BoldRegular.svg#AvenirNextLTW01BoldRegular') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'AvenirNextBold';
+    src: url('../fonts/AvenirNextLTW01BoldRegular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/AvenirNextLTW01BoldRegular.otf')  format('opentype'),
+	    url('../fonts/AvenirNextLTW01BoldRegular.woff') format('woff'), 
+        url('../fonts/AvenirNextLTW01BoldRegular.ttf')  format('truetype'), 
+        url('../fonts/AvenirNextLTW01BoldRegular.svg#AvenirNextLTW01BoldRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
   font-family: 'iconfont';
@@ -44,6 +45,9 @@
 }
 [class^="icon-"]:before, [class*=" icon-"]:before{
     font-family: 'iconfont' !important;
+}
+.icon-cross-out:before {
+  content: "\e907";
 }
 .icon-menu:before {
   content: "\e906";
@@ -107,6 +111,26 @@ a.uk-bordered-link:hover:before{
 .uk-vertical-alignment{
     height: 100%;
 }
+.uk-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    opacity: 1;
+    font-size: 18px;
+    font-weight: bold;
+}
+.uk-close:after{
+    content: "\e907";
+    font-family: 'iconfont' !important;
+}
+.uk-close:hover{
+    color: #ff7676;
+    opacity: 1;
+}
+.uk-offcanvas-bar{
+    padding-top: 20px;
+}
 /* ==========================================================
    Стили шапки
 ========================================================== */
@@ -159,6 +183,48 @@ a.uk-bordered-link:hover:before{
     top: 50%;
     right: 0;
     margin-top: -15px;
+}
+.tm-navbar .uk-navbar-nav > li{
+    position: inherit;
+}
+.tm-navbar .uk-navbar-nav > li:nth-child(3) .uk-dropdown-navbar{
+    display: block;/*Удалить*/
+}
+.tm-navbar .uk-dropdown-navbar{
+    background: rgba(36, 58, 80, 0.95);
+    left: 70px !important;
+    right: 70px !important;
+    top: 40px !important;
+    width: auto;
+}
+.tm-navbar .uk-dropdown-navbar:after{
+    content: "";
+    width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 10px solid red;
+}
+.tm-navbar .uk-nav-navbar{
+    font-size: 16px;
+    text-align: center;
+}
+.tm-navbar .uk-nav-navbar > li{
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+}
+.tm-navbar .uk-nav-navbar > li + li{
+    margin-left: 30px;
+}
+.tm-navbar .uk-nav-navbar > li > a{
+    color: #fff;
+}
+.tm-navbar .uk-nav-sub{
+    font-size: 12px;
+}
+.tm-navbar .uk-nav-sub > li a{
+    color: #8eaac6;
 }
 /* ==========================================================
    Стили основных блоков на главной
@@ -272,6 +338,9 @@ a.uk-bordered-link:hover:before{
 .uk-col:last-child.uk-hovered .uk-menu-advance-block-content{
     transform: translate3d(-2vw, -5vw, 0px);
 }
+.uk-col.uk-hovered.uk-hover-center .uk-menu-advance-block-content {
+    transform: translate3d(0, -5vw, 0px);
+}
 .uk-menu-advance-block-icon{
     padding: 20px;
     border-radius: 100%;
@@ -301,11 +370,11 @@ a.uk-bordered-link:hover:before{
     margin-top: 15px;
 }
 .uk-menu-advance-block-title{
-    font-family: 'AvenirNextBold';
+    /*font-family: 'AvenirNextBold';*/
     line-height: 1;
     margin-top: 15px;
     word-wrap: break-word;
-    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.45);
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
 }
 .uk-menu-advance-block-list{
     list-style: none;
@@ -417,27 +486,59 @@ a.uk-bordered-link:hover:before{
     }
 }
 @media (max-width: 1149px){
-    /*.uk-logo-wrapper{
-        max-width: 110px;
-    }
-    .uk-phone-number .icon-phone-call{
-        font-size: 22px;
-    }*/
     .tm-navbar{
         width: 80%;
     }
+    .uk-headerbar-mobile{
+        width: 80%;
+        display: block !important;
+    }
+    .uk-headerbar-mobile .uk-phone-number{
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .uk-headerbar-mobile.uk-country-code,
+    .uk-headerbar-mobile .uk-operator-code{
+        font-size: 16px;
+        line-height: 32px;
+    }
+    .uk-headerbar-mobile .uk-md-phone-row{
+        margin-top: -5px;
+        padding-top: 5px;
+    }
     .uk-navbar-nav,
-    .uk-md-phones{
+    .uk-header-phones{
         display: none;
     }
     .uk-navbar-toggle{
         display: block !important;
     }
+    .uk-menu-advance-block-bg {
+        padding-top: 100px;
+    }
 }
-@media (max-width: 999px){
+@media (max-width: 1099px){
     .uk-h1{
         font-size: 36px;
         line-height: 46px;
+    }
+}
+@media (max-width: 767px){
+    .uk-headerbar-mobile .uk-phone-number{
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .uk-headerbar-mobile.uk-country-code,
+    .uk-headerbar-mobile .uk-operator-code{
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .uk-md-phone-row .icon-phone-call{
+        font-size: 26px;
+    }
+    .uk-headerbar-mobile .uk-md-phone-row{
+        margin-top: 0;
+        padding-top: 0;
     }
 }
 @media (max-width: 959px){
@@ -459,7 +560,7 @@ a.uk-bordered-link:hover:before{
         opacity: 1;
     }
 }
-@media (max-width: 479px){
+@media (max-width: 767px){
     .uk-col:last-child .uk-menu-advance-block-bg{
         padding-bottom: 130px;
     }
@@ -467,6 +568,34 @@ a.uk-bordered-link:hover:before{
     .uk-medialine-copyrate{
         margin-top: 30px;
         text-align: center !important;
+    }
+}
+@media (max-width: 479px){
+    .uk-headerbar-mobile{
+        width: 74%;
+    }
+    .uk-headerbar-mobile .uk-phone-number{
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .uk-headerbar-mobile.uk-country-code,
+    .uk-headerbar-mobile .uk-operator-code{
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .uk-md-phone-row .icon-phone-call{
+        display: none;
+    }
+    .uk-headerbar-mobile .uk-md-phone-row{
+        padding-right: 0;
+    }
+    .uk-md-phone-row:before {
+        right: 0px !important;
+    }
+    .uk-navbar-toggle {
+        font-size: 24px;
+        color: #ffffff;
+        text-decoration: none;
     }
 }
 
